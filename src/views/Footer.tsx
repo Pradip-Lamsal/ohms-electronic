@@ -43,7 +43,7 @@ export default function Footer() {
             </a>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400">
               Engineering the future of electronics — one circuit at a time.
-              Trusted by businesses across India since 2014.
+              Trusted by businesses across Nepal since 2000.
             </p>
           </div>
 

@@ -124,17 +124,17 @@ function Stat({
   return (
     <div
       ref={cardRef}
-      className={`rounded-2xl border border-zinc-200/60 bg-white/80 px-6 py-8 backdrop-blur-sm shadow-sm transition-all duration-700 ease-out ${
+      className={`rounded-xl border border-zinc-200/60 bg-white/80 px-4 py-5 backdrop-blur-sm shadow-sm transition-all duration-700 ease-out sm:rounded-2xl sm:px-6 sm:py-8 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div ref={ref}>
-        <p className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+        <p className="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
           {count}
           <span className="text-emerald-600">{suffix}</span>
         </p>
-        <p className="mt-2 text-sm font-medium tracking-wide text-zinc-400 uppercase">
+        <p className="mt-1 text-xs font-medium tracking-wide text-zinc-400 uppercase sm:mt-2 sm:text-sm">
           {label}
         </p>
       </div>
@@ -147,7 +147,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-zinc-50 pt-24 pb-20"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-zinc-50 pt-20 pb-12 sm:pt-24 sm:pb-20"
     >
       {/* Animated grid background */}
       <AnimatedGrid />
@@ -155,19 +155,19 @@ export default function Hero() {
       {/* Center fade overlay for readability */}
       <div className="pointer-events-none absolute inset-0 bg-radial-[ellipse_at_center] from-white/90 via-white/70 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-        <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
+      <div className="relative z-10 mx-auto max-w-5xl px-5 text-center sm:px-6">
+        <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
           Powering Nepal&apos;s
           <br />
           <span className="text-emerald-600">Electronic</span> Infrastructure
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-zinc-400 sm:mt-6 sm:text-lg">
           We design, manufacture, and deploy cutting-edge electronic systems —
           from industrial control panels to smart automation solutions.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center">
           <Button href="#projects">Explore Our Work</Button>
           <Button href="#about" variant="outline">
             Learn More
@@ -175,10 +175,10 @@ export default function Hero() {
         </div>
 
         {/* Divider */}
-        <div className="mx-auto mt-20 h-px w-full max-w-3xl bg-linear-to-r from-transparent via-zinc-200 to-transparent" />
+        <div className="mx-auto mt-10 h-px w-full max-w-3xl bg-linear-to-r from-transparent via-zinc-200 to-transparent sm:mt-20" />
 
         {/* Stats */}
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-4 sm:gap-6">
           <Stat end={25} suffix="+" label="Years" delay={0} />
           <Stat end={500} suffix="+" label="Projects" delay={150} />
           <Stat end={100} suffix="+" label="Clients" delay={300} />

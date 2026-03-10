@@ -65,7 +65,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-950 py-24 sm:py-32"
+      className="relative bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-950 py-16 sm:py-24 lg:py-32"
     >
       {/* Subtle pattern overlay */}
       <div
@@ -76,7 +76,7 @@ export default function About() {
         }}
       />
 
-      <div className="relative mx-auto max-w-5xl px-8 sm:px-12 lg:px-16">
+      <div className="relative mx-auto max-w-5xl px-5 sm:px-12 lg:px-16">
         <SectionHeading
           label="Who We Are"
           title="Engineering Excellence Since 2000"

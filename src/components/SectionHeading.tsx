@@ -16,11 +16,13 @@ export default function SectionHeading({
   const isCenter = align === "center";
 
   return (
-    <div className={`relative mb-20 ${isCenter ? "text-center" : "text-left"}`}>
+    <div
+      className={`relative mb-12 sm:mb-20 ${isCenter ? "text-center" : "text-left"}`}
+    >
       {/* Large watermark text */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute -top-6 select-none whitespace-nowrap text-[6rem] font-black uppercase leading-none tracking-widest sm:text-[8rem] lg:text-[10rem] ${
+        className={`pointer-events-none absolute -top-4 select-none whitespace-nowrap text-[4rem] font-black uppercase leading-none tracking-widest sm:-top-6 sm:text-[8rem] lg:text-[10rem] ${
           dark ? "text-white/5" : "text-emerald-800/6"
         } ${isCenter ? "left-1/2 -translate-x-1/2" : "left-0"}`}
       >
@@ -32,7 +34,7 @@ export default function SectionHeading({
         className={`relative ${isCenter ? "mx-auto max-w-2xl" : "max-w-2xl"}`}
       >
         <h2
-          className={`text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${
+          className={`text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${
             dark ? "text-white" : "text-zinc-900"
           }`}
         >
@@ -41,7 +43,7 @@ export default function SectionHeading({
 
         {description && (
           <p
-            className={`mt-4 text-lg leading-relaxed ${
+            className={`mt-3 text-base leading-relaxed sm:mt-4 sm:text-lg ${
               dark ? "text-emerald-100/70" : "text-zinc-500"
             }`}
           >

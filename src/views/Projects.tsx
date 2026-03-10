@@ -42,7 +42,7 @@ export default function Projects() {
         <SectionHeading
           label="Our Work"
           title="What We Build"
-          description="From concept to deployment — we deliver end-to-end electronic solutions that power industries across India."
+          description="From concept to deployment — we deliver end-to-end electronic solutions that power industries across Nepal."
         />
 
         {/* Bento-style grid */}
