@@ -22,7 +22,7 @@ export default function SectionHeading({
       {/* Large watermark text */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute -top-4 select-none whitespace-nowrap text-[4rem] font-black uppercase leading-none tracking-widest sm:-top-6 sm:text-[8rem] lg:text-[10rem] ${
+        className={`pointer-events-none absolute -top-4 select-none whitespace-nowrap text-[3rem] font-black uppercase leading-none tracking-widest sm:-top-6 sm:text-[6rem] md:text-[7rem] lg:text-[10rem] ${
           dark ? "text-white/5" : "text-emerald-800/6"
         } ${isCenter ? "left-1/2 -translate-x-1/2" : "left-0"}`}
       >

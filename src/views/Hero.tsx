@@ -4,21 +4,34 @@ import Button from "@/components/Button";
 import { useEffect, useRef, useState } from "react";
 
 /* ── Animated grid background ──────────────────────── */
-const GRID_COLS = 20;
-const GRID_ROWS = 12;
-const COLORS = [
-  "bg-emerald-500/20",
-  "bg-emerald-600/15",
-  "bg-zinc-900/10",
-  "bg-zinc-800/8",
-  "bg-white",
-  "bg-emerald-400/12",
-];
-
 function AnimatedGrid() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const GRID_COLS = isMobile ? 12 : 20;
+  const GRID_ROWS = isMobile ? 8 : 12;
+  const COLORS = [
+    "bg-emerald-500/20",
+    "bg-emerald-600/15",
+    "bg-zinc-900/10",
+    "bg-zinc-800/8",
+    "bg-white",
+    "bg-emerald-400/12",
+  ];
+
   const [cells, setCells] = useState<string[]>(() =>
     Array(GRID_COLS * GRID_ROWS).fill("bg-zinc-100/60"),
   );
+
+  useEffect(() => {
+    setCells(Array(GRID_COLS * GRID_ROWS).fill("bg-zinc-100/60"));
+  }, [GRID_COLS, GRID_ROWS]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +51,8 @@ function AnimatedGrid() {
       });
     }, 400);
     return () => clearInterval(interval);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [GRID_COLS, GRID_ROWS]);
 
   return (
     <div
@@ -147,7 +161,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-zinc-50 pt-20 pb-12 sm:pt-24 sm:pb-20"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-zinc-50 pt-20 pb-16 sm:pt-24 sm:pb-20"
     >
       {/* Animated grid background */}
       <AnimatedGrid />
@@ -156,7 +170,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-radial-[ellipse_at_center] from-white/90 via-white/70 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center sm:px-6">
-        <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-zinc-900 sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl">
           Powering Nepal&apos;s
           <br />
           <span className="text-emerald-600">Electronic</span> Infrastructure

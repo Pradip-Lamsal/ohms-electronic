@@ -48,7 +48,10 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative bg-zinc-50 py-24 sm:py-32">
+    <section
+      id="testimonials"
+      className="relative bg-zinc-50 py-16 sm:py-20 md:py-24 lg:py-32"
+    >
       <div className="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
@@ -74,7 +77,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-sm leading-relaxed text-zinc-600">
+              <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
                 &ldquo;{t.quote}&rdquo;
               </p>
 

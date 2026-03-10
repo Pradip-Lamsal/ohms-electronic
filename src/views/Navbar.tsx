@@ -22,9 +22,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <nav
-      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 w-[96%] max-w-5xl transition-all duration-500 sm:w-[92%] ${
+      className={`fixed top-3 left-1/2 z-50 w-[calc(100%-1rem)] max-w-5xl -translate-x-1/2 transition-all duration-500 sm:top-4 sm:w-[calc(100%-2rem)] lg:w-[calc(100%-3rem)] xl:w-[92%] ${
         mobileOpen ? "rounded-2xl" : "rounded-full"
       } ${
         scrolled
@@ -38,17 +46,17 @@ export default function Navbar() {
           <Image
             src="/Logo/Logo.jpeg"
             alt="Ohms Electronic"
-            width={40}
-            height={40}
+            width={36}
+            height={36}
             className="rounded-full"
           />
-          <span className="text-lg font-bold text-zinc-900 hidden sm:inline">
+          <span className="hidden text-lg font-bold text-zinc-900 sm:inline">
             Ohms<span className="text-emerald-600">Electrical</span>
           </span>
         </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -62,7 +70,7 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="tel:+977-01-5916438"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-colors hover:bg-emerald-100"
@@ -90,8 +98,9 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2 min-w-11 min-h-11 items-center justify-center lg:hidden"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <span
             className={`h-0.5 w-5 bg-zinc-700 transition-all duration-300 ${
@@ -113,10 +122,17 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`overflow-hidden transition-all duration-300 lg:hidden ${
           mobileOpen ? "max-h-80 pb-5" : "max-h-0"
         }`}
       >
+        {/* Backdrop blur overlay */}
+        {mobileOpen && (
+          <div
+            className="fixed inset-0 -z-10 bg-black/20 backdrop-blur-sm"
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
         <ul className="flex flex-col items-center gap-2 pt-2">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>

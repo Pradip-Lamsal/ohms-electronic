@@ -22,13 +22,16 @@ const FOOTER_LINKS = {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-zinc-900 pt-20 pb-8">
+    <footer
+      id="contact"
+      className="relative bg-zinc-900 pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-8"
+    >
       <div className="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 md:col-span-3 lg:col-span-1">
             <a href="#home" className="inline-flex items-center gap-2">
               <Image
                 src="/Logo/Logo.jpeg"
@@ -77,7 +80,7 @@ export default function Footer() {
           </p>
 
           {/* Certifications — subtle inline badges */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 sm:gap-6">
             <span className="flex items-center gap-1.5 text-xs text-zinc-500">
               <svg
                 className="h-3.5 w-3.5 text-zinc-500"

@@ -2,17 +2,17 @@ import Button from "@/components/Button";
 
 export default function CTA() {
   return (
-    <section className="relative bg-white py-24 sm:py-32">
+    <section className="relative bg-white py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 p-12 sm:p-20">
+        <div className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 p-8 sm:p-12 md:p-16 lg:p-20">
           {/* Glow */}
           <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-emerald-300/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-emerald-300/15 blur-3xl hidden md:block" />
 
           <div className="relative z-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl lg:text-5xl">
               Ready to Build Something{" "}
               <span className="text-emerald-200">Extraordinary</span>?
             </h2>

@@ -33,7 +33,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative bg-gradient-to-b from-white via-emerald-50/30 to-white py-24 sm:py-32"
+      className="relative bg-gradient-to-b from-white via-emerald-50/30 to-white py-16 sm:py-20 md:py-24 lg:py-32"
     >
       {/* Subtle divider */}
       <div className="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
@@ -56,7 +56,7 @@ export default function Projects() {
             >
               <div
                 className={`relative overflow-hidden ${
-                  i === 0 ? "h-72 sm:h-full" : "h-52"
+                  i === 0 ? "min-h-72 sm:h-full" : "h-52"
                 }`}
               >
                 <Image
@@ -68,7 +68,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
                 <h3 className="text-lg font-bold text-white transition-colors group-hover:text-emerald-300">
                   {project.title}
                 </h3>

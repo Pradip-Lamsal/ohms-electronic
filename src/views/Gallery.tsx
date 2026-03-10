@@ -21,7 +21,10 @@ export default function Gallery() {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section id="gallery" className="relative bg-white py-24 sm:py-32">
+    <section
+      id="gallery"
+      className="relative bg-white py-16 sm:py-20 md:py-24 lg:py-32"
+    >
       <div className="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
@@ -75,8 +78,8 @@ export default function Gallery() {
           })}
         </div>
 
-        {/* View More / View Less — mobile only */}
-        <div className="mt-8 flex justify-center sm:hidden">
+        {/* View More / View Less — mobile and small tablets */}
+        <div className="mt-8 flex justify-center md:hidden">
           <button
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-600 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-600"
@@ -102,7 +105,7 @@ export default function Gallery() {
       {/* Lightbox */}
       {selected !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-2 sm:p-4"
           onClick={() => setSelected(null)}
         >
           <div
@@ -121,11 +124,11 @@ export default function Gallery() {
             {/* Close */}
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+              className="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600 sm:top-3 sm:right-3 sm:h-12 sm:w-12"
               aria-label="Close"
             >
               <svg
-                className="h-4 w-4"
+                className="h-5 w-5 sm:h-4 sm:w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -144,11 +147,11 @@ export default function Gallery() {
               onClick={() =>
                 setSelected((selected - 1 + IMAGES.length) % IMAGES.length)
               }
-              className="absolute left-3 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+              className="absolute left-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600 sm:left-3 sm:h-12 sm:w-12"
               aria-label="Previous"
             >
               <svg
-                className="h-5 w-5"
+                className="h-5 w-5 sm:h-5 sm:w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -163,11 +166,11 @@ export default function Gallery() {
             </button>
             <button
               onClick={() => setSelected((selected + 1) % IMAGES.length)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow-md backdrop-blur-sm transition-colors hover:bg-emerald-50 hover:text-emerald-600 sm:right-3 sm:h-12 sm:w-12"
               aria-label="Next"
             >
               <svg
-                className="h-5 w-5"
+                className="h-5 w-5 sm:h-5 sm:w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

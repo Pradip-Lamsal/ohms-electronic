@@ -65,7 +65,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-950 py-16 sm:py-24 lg:py-32"
+      className="relative bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-950 py-16 sm:py-20 md:py-24 lg:py-32"
     >
       {/* Subtle pattern overlay */}
       <div
@@ -84,9 +84,9 @@ export default function About() {
           dark
         />
 
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
           {/* Image side — constrained */}
-          <div className="mx-auto w-full max-w-sm">
+          <div className="mx-auto w-full max-w-sm md:max-w-md lg:max-w-lg">
             <div className="relative overflow-hidden rounded-2xl border border-emerald-700/40 shadow-2xl shadow-black/20">
               <Image
                 src="/Images/image1.jpeg"
@@ -113,7 +113,7 @@ export default function About() {
               {HIGHLIGHTS.map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-3 rounded-xl border border-emerald-700/30 bg-emerald-800/40 p-3.5 backdrop-blur-sm"
+                  className="flex gap-3 rounded-xl border border-emerald-700/30 bg-emerald-800/40 p-3.5 backdrop-blur-sm md:p-4"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-300">
                     {item.icon}
