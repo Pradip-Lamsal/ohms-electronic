@@ -24,13 +24,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-500 ${
+      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 w-[96%] max-w-5xl transition-all duration-500 sm:w-[92%] ${
+        mobileOpen ? "rounded-2xl" : "rounded-full"
+      } ${
         scrolled
-          ? "w-[92%] max-w-5xl rounded-full border border-zinc-200 bg-white/90 shadow-lg shadow-black/5 backdrop-blur-xl"
-          : "w-[92%] max-w-5xl rounded-full border border-zinc-200/50 bg-white/70 backdrop-blur-md"
+          ? "border border-zinc-200 bg-white/90 shadow-lg shadow-black/5 backdrop-blur-xl"
+          : "border border-zinc-200/50 bg-white/70 backdrop-blur-md"
       }`}
     >
-      <div className="flex items-center justify-between px-5 py-3">
+      <div className="flex items-center justify-between px-3 py-2.5 sm:px-5 sm:py-3">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 shrink-0">
           <Image
